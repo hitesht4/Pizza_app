@@ -1,0 +1,94 @@
+.container {
+  height: 5.8rem;
+  padding: 0 5rem;
+  background-color: #c7102e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.item:nth-child(2) {
+  flex: 3;
+}
+
+.item:last-child {
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.callButton {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.7rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.texts {
+  margin-left: 1.2rem;
+  color: white;
+}
+
+.text:first-child {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.text:last-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  color: white;
+}
+
+.listItem {
+  margin: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cart {
+  position: relative;
+}
+
+.counter {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #d1411e;
+}
+
+@media screen and (max-width: 480px) {
+  .item:nth-child(2) {
+    display: none;
+  }
+
+  .item:nth-child(1) {
+    flex: 3;
+  }
+}
