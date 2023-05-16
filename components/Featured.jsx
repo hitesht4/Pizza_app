@@ -43,14 +43,7 @@ const Featured = () => {
         style={{ right: 0 }}
         onClick={() => handleArrow("r")}
       >
-        <Image
-          src="/img/arrowr.png"
-          layout="fill"
-          alt=""
-          objectFit="cover"
-          width={"100vw"}
-          height={"100%"}
-        />
+        <Image src="/img/arrowr.png" layout="fill" alt="" objectFit="cover" />
       </div>
     </div>
   );

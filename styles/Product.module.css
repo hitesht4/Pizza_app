@@ -32,36 +32,47 @@
   color: #c7102e;
   font-size: 24px;
   font-weight: 400;
-  border-bottom: 1px solid #c7102e;
+  display: flex;
+  width:25%;
+  justify-content:flex-start;
+  align-items: center;
+  gap:1rem !important;
 }
 
 .sizes {
-  width: 40%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
+  gap:2rem;
+  margin-bottom: 2rem;
 }
 
-.size {
-  width: 30px;
-  height: 30px;
+.size{
+  flex: 1;
+  height: 100px;
   position: relative;
   cursor: pointer;
+  padding: 10px;
+  border: 2px solid transparent !important;
 }
 
-.size:nth-child(2) {
-  width: 40px;
-  height: 40px;
-}
-
-.size:last-child {
-  width: 50px;
-  height: 50px;
+.size img {
+  width: 40px !important;
+  height: 40px !important;
 }
 
 .number {
   position: absolute;
   top: -5px;
   right: -20px;
+  background-color: teal;
+  color: white;
+  font-size: 12px;
+  padding: 0 5px;
+  border-radius: 10px;
+}
+
+.number2 {
   background-color: teal;
   color: white;
   font-size: 12px;

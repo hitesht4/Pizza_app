@@ -1,19 +1,20 @@
 .container {
-  width: 22%;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1.25rem 2.5rem;
+  justify-content: flex-start;
+  padding: 1rem 1rem;
   cursor: pointer;
+  border: 0.3px solid #c7102e;
+  
 }
-
 .title {
   font-size: 1.2rem;
   font-weight: bold;
   color: #c7102e;
+  text-align: center;
 }
+
 
 .price {
   font-size: 1.2rem;
