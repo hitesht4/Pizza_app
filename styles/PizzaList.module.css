@@ -18,7 +18,24 @@
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-gap:1rem;
+}
 
+.btnDiv{
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  width: 25%;
+  padding: 1rem;
+  border: none;
+  background: #c7102e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {

@@ -1,10 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
-import axios from "axios";
 
-export default function Home({ data }) {
+
+export default function Home() {
   return (
     <div>
       <Head>
@@ -13,14 +12,10 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
-      <PizzaList pizzas={data.data} />
+      <PizzaList/>
     </div>
   );
 }
 
-export const getServerSideProps = async () => {
-  let { data } = await axios.get("http://localhost:3000/api/products");
-  return {
-    props: { data },
-  };
-};
+
+

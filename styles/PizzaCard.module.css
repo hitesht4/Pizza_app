@@ -5,7 +5,7 @@
   justify-content: flex-start;
   padding: 1rem 1rem;
   cursor: pointer;
-  border: 0.3px solid #c7102e;
+  box-shadow: rgba(212, 40, 86, 0.2) 0px 8px 24px;
   
 }
 .title {

@@ -22,18 +22,29 @@
 
 .table {
   width: 100%;
-  border-spacing: 1.2rem;
+  border-spacing: 1rem;
 }
-
+.extras{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:0.5rem;
+}
+.table td{
+  text-align: center;
+}
 .name {
   font-weight: 500;
   color: #c7102e;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
+
 
 .total {
   font-weight: 500;
   font-size: 1.2rem;
+ 
 }
 
 .wrapper {
@@ -46,6 +57,16 @@
   flex-direction: column;
   justify-content: space-between;
   color: white;
+}
+
+.totalText{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title{
+  text-align: center;
 }
 
 .totalTextTitle {
