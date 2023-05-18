@@ -2,8 +2,9 @@ import axios from "axios";
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Add } from "../../redux/cart/cart.types";
+import { useDispatch, useSelector } from "react-redux";
+import { Add, Delete } from "../../redux/cart/cart.types";
+import toast, { Toaster } from "react-hot-toast";
 
 const Product = ({ data }) => {
   const [size, setSize] = useState(0);
@@ -13,15 +14,18 @@ const Product = ({ data }) => {
   const [qty, setQty] = useState(1);
   const [extras, setExtras] = useState([]);
   const dispatch = useDispatch();
+  const { cart } = useSelector((state) => state.cart);
 
   const handlePrice = (n) => {
     setPrice(Number(price) + Number(n));
   };
+
   const handleSize = (sizeIndex) => {
     const diff = pizza.prices[sizeIndex] - pizza.prices[size];
     setSize(sizeIndex);
     handlePrice(diff);
   };
+
   const handleChange = (e, p, t) => {
     if (e.target.checked === true) {
       setPrice(Number(price) + Number(p));
@@ -33,12 +37,24 @@ const Product = ({ data }) => {
     console.log(extras);
   };
 
-  console.log(qty);
-
   const handleAddCart = () => {
-    const { title, img,_id } = pizza;
-    const item = {id:_id, title: title, img: img,price:price, extras: [...extras],qty: qty,total:Number(price)*Number(qty) };
-    dispatch({type:Add ,payload:item});
+    const { title, img, _id } = pizza;
+    const item = {
+      id: _id,
+      title: title,
+      img: img,
+      price: price,
+      extras: [...extras],
+      qty: qty,
+      total: Number(price) * Number(qty),
+    };
+    dispatch({ type: Add, payload: item });
+    toast("Item was Added to Cart", {
+      style: {
+        background: "green",
+        color: "white",
+      },
+    });
   };
   const sizes = [{ tag: "small" }, { tag: "medium" }, { tag: "large" }];
   return (
@@ -98,9 +114,29 @@ const Product = ({ data }) => {
             className={styles.quantity}
             onChange={(e) => setQty(e.target.value)}
           />
-          <button className={styles.button} onClick={handleAddCart}>Add to Cart</button>
+          {cart.some((p) => p.id === pizza._id) ? (
+            <button
+              className={styles.button1}
+              onClick={() => {
+                dispatch({ type: Delete, payload: pizza._id });
+                toast("Item Deleted from Cart", {
+                  style: {
+                    background: "red",
+                    color: "white",
+                  },
+                });
+              }}
+            >
+              Remove from cart
+            </button>
+          ) : (
+            <button className={styles.button} onClick={handleAddCart}>
+              Add to Cart
+            </button>
+          )}
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

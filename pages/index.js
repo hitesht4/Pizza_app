@@ -2,7 +2,6 @@ import Head from "next/head";
 import Featured from "../components/Featured";
 import PizzaList from "../components/PizzaList";
 
-
 export default function Home() {
   return (
     <div>
@@ -12,10 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
-      <PizzaList/>
+      <PizzaList />
     </div>
   );
 }
-
-
-

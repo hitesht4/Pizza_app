@@ -3,41 +3,36 @@
     align-items: center;
     justify-content: center;
     height: calc(100vh - 5.8rem);
-    background: #fff;
 }
-.Form{
-    width: 30%;
-    padding: 1rem 2rem;
-    border-radius: 20px;
-    min-height: 400px;
-    text-align: center;
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    width:30%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
-.Form h1{
-    margin-bottom: 2rem;
-}
-.signin{
-    width: 100%;
-    background: #c7102e;
-    border: none;
-    margin-top: 1rem;
-}
-.signin:hover{
-    background: #c7102e !important; 
-}
-.google{
-    width: 100%;
+.console{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:1rem;
-    background: #4285F4 !important;
-}
-.google:hover{
-    background: #4285F4 !important;
 }
 
-.google svg{
-    font-size: 2rem;
+.console>div{
+    flex:1;
+    text-align: center;
+    padding:1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid white;
 }
+
+@media only screen and (max-width:1024px){
+    .wrapper{
+        width:60%;
+    } 
+}
+
+
+@media only screen and (max-width:600px){
+    .wrapper{
+        width:85%;
+    } 
+}
+

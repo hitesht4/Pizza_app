@@ -51,6 +51,14 @@
   align-items: center;
   list-style: none;
   color: white;
+  margin: 0;
+}
+.list a{
+  text-decoration: none;
+  color:white
+}
+.list a:hover{
+  color: white;
 }
 
 .listItem {
@@ -58,6 +66,7 @@
   font-weight: 500;
   cursor: pointer;
 }
+
 
 .cart {
   position: relative;

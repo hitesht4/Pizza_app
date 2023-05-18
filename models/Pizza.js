@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const pizzaSchema =new mongoose.Schema(
+const pizzaSchema = new mongoose.Schema(
   {
     title: {
       type: String,

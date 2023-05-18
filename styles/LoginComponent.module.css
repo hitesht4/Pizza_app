@@ -1,0 +1,34 @@
+.Form{
+    width: 100%;
+    text-align: center;
+    padding:1rem 2rem 2rem;
+}
+
+.Form h1{
+    margin-bottom: 2rem;
+}
+.signin{
+    width: 100%;
+    background: #c7102e;
+    border: none;
+    margin-top: 1rem;
+}
+.signin:hover{
+    background: #c7102e !important; 
+}
+.google{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    background: #4285F4 !important;
+}
+.google:hover{
+    background: #4285F4 !important;
+}
+
+.google svg{
+    font-size: 1.3rem;
+}
+

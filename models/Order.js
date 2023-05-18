@@ -7,25 +7,19 @@ const orderSchema = mongoose.Schema(
       required: true,
       maxLength: 60,
     },
-    address: {
-      type: String,
-      required: true,
-      maxLength: 200,
-    },
     total: {
       type: Number,
       required: true,
     },
-    status: {
-      type: Number,
-      default: 0,
-    },
     payementMethods: {
-      type: Number,
-      required: true
+      type: String,
+    },
+    items: {
+      type: Array,
+      required: true,
     },
   },
   { timeStamps: true }
 );
 
-export const orderModel = mongoose.model("order", orderSchema);
+export default mongoose.models.order || mongoose.model("order", orderSchema);
