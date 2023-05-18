@@ -33,7 +33,7 @@ const Login = () => {
         path: "/",
       });
     } catch (e) {
-      toast("e.message", {
+      toast(e.message, {
         style: {
           background: "red",
           color: "white",
