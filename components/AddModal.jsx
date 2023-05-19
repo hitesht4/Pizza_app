@@ -53,7 +53,7 @@ function AddModal(props) {
         img: url,
       };
       let { data } = await axios.post(
-        "http://localhost:3000/api/products",
+        "https://pizza-hitesht4.vercel.app/api/products",
         newProduct
       );
       props.onHide();

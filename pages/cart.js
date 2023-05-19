@@ -23,7 +23,7 @@ const Cart = () => {
   const createCheckoutSession = async () => {
     try {
       let res = await axios.post(
-        "http://localhost:3000/api/checkout_sessions",
+        "https://pizza-hitesht4.vercel.app/api/checkout_sessions",
         { cart }
       );
       window.location = res.data.sessionUrl;
@@ -66,7 +66,7 @@ const Cart = () => {
       items: [...orderItems],
     };
     try {
-      await axios.post("http://localhost:3000/api/orders", order);
+      await axios.post("https://pizza-hitesht4.vercel.app/api/orders", order);
       await createCheckoutSession();
       dispatch({ type: Reset });
     } catch (e) {

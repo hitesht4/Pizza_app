@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Pizza Restaurant in Newyork</title>
         <meta name="description" content="Best pizza shop in town" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/Tasty.png" />
       </Head>
       <Featured />
       <PizzaList />

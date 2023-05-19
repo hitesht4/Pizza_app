@@ -143,7 +143,7 @@ const Product = ({ data }) => {
 
 export const getServerSideProps = async (context) => {
   const id = context.query.id;
-  let { data } = await axios.get(`http://localhost:3000/api/products/${id}`);
+  let { data } = await axios.get(`https://pizza-hitesht4.vercel.app/products/${id}`);
   return {
     props: { data },
   };

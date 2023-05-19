@@ -19,7 +19,7 @@ const AdminLoginComponent = () => {
       try {
         let {
           data: { status },
-        } = await axios.post("http://localhost:3000/api/login", {
+        } = await axios.post("https://pizza-hitesht4.vercel.app/api/login", {
           username,
           password,
         });

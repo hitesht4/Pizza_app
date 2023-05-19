@@ -4,7 +4,7 @@ import styles from "../../styles/Admin.module.css";
 import {  parseCookies } from "nookies";
 import TableCard from "../../components/TableCard";
 import AddModal from "../../components/AddModal";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster} from "react-hot-toast";
 
 
 const Index = ({ data }) => {
@@ -23,9 +23,6 @@ const Index = ({ data }) => {
           >
             Add Product
           </button>
-          {/* <button onClick={handleLogout} className={styles.AddButton1}>
-            Logout
-          </button> */}
         </div>
       </div>
       <table className={styles.table}>
@@ -72,7 +69,7 @@ export const getServerSideProps = async (context) => {
       },
     };
   }
-  let { data } = await axios.get("http://localhost:3000/api/products");
+  let { data } = await axios.get("https://pizza-hitesht4.vercel.app/api/products");
   return {
     props: { data },
   };

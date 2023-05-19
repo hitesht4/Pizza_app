@@ -45,7 +45,7 @@ function Edit(props) {
           img: url,
         };
         let u = await axios.put(
-          `http://localhost:3000/api/products/${props.pizza._id}`,
+          `https://pizza-hitesht4.vercel.app/api/products/${props.pizza._id}`,
           newProduct
         );
         const updated = props.pizzaList.map((item) => {
@@ -83,7 +83,7 @@ function Edit(props) {
         img: props.pizza.img,
       };
       await axios.put(
-        `http://localhost:3000/api/products/${props.pizza._id}`,
+        `https://pizza-hitesht4.vercel.app/api/products/${props.pizza._id}`,
         newProduct
       );
       const updated = props.pizzaList.map((item) => {

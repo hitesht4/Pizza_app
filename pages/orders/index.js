@@ -58,7 +58,7 @@ export const getServerSideProps = async (context) => {
     };
   }
 
-  let { data } = await axios.get("http://localhost:3000/api/orders", {
+  let { data } = await axios.get("https://pizza-hitesht4.vercel.app/api/orders", {
     headers: {
       user: myCookie,
     },
