@@ -24,7 +24,7 @@ const Order = ({ orders }) => {
                   {o.items.map((i, index) => (
                     <div key={index} className={styles.orderItem}>
                       <div>
-                        <Image src={i.img} alt=""/>
+                        <Image width={40} height={40} src={i.img} alt=""/>
                       </div>
                       <div>{i.title}</div>
                       <div>{i.price}$</div>

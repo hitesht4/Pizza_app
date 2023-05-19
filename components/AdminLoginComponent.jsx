@@ -49,7 +49,7 @@ const AdminLoginComponent = () => {
       if(adminCookie){
         router.push("/admin");
       }
-    },[adminCookie])
+    },[adminCookie,router])
   return (
     <div className={styles.adminContainer}>
     <Form onSubmit={handleLogin} className={styles.Form}>
