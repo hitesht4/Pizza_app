@@ -86,9 +86,9 @@ const Cart = () => {
               <tr className={styles.trTitle}>
                 <th>Product</th>
                 <th>Name</th>
-                <th>Extras</th>
+                <th className={styles.extraCol}>Extras</th>
                 <th>Price</th>
-                <th>Quantity</th>
+                <th className={styles.Quant}>Quantity</th>
                 <th>Delete</th>
                 <th>Total</th>
               </tr>
@@ -110,17 +110,21 @@ const Cart = () => {
                     <td>
                       <span className={styles.name}>{item.title}</span>
                     </td>
-                    <td>
-                      <p className={styles.extras}>
-                        {item.extras.map((i, index) => (
-                          <span key={index}>{i}</span>
-                        ))}
-                      </p>
+                    <td className={styles.extraCol}>
+                      {item.extras.length === 0 ? (
+                        <p>None</p>
+                      ) : (
+                        <p className={styles.extras}>
+                          {item.extras.map((i, index) => (
+                            <span key={index}>{i}</span>
+                          ))}
+                        </p>
+                      )}
                     </td>
                     <td>
                       <span className={styles.price}>${item.price}</span>
                     </td>
-                    <td>
+                    <td className={styles.Quant}>
                       <span className={styles.quantity}>{item.qty}</span>
                     </td>
                     <td>
@@ -128,7 +132,7 @@ const Cart = () => {
                         className={styles.delete}
                         onClick={() => handleDelete(item.id)}
                       >
-                        <AiFillDelete style={{ fontSize: "2rem" }} />
+                        <AiFillDelete style={{ fontSize: "1.5rem" }} />
                       </span>
                     </td>
                     <td>

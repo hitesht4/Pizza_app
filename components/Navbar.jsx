@@ -6,10 +6,25 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase";
 import { signOut } from "firebase/auth";
 import { destroyCookie } from "nookies";
+import { useRouter } from "next/router";
+import { Toaster, toast } from "react-hot-toast";
 
 const Navbar = () => {
   const { cart } = useSelector((state) => state.cart);
   const [user] = useAuthState(auth);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    signOut(auth);
+    destroyCookie(null, "user");
+    router.push("/");
+    toast("Logged Out Successfully", {
+      style: {
+        background: "green",
+        color: "white",
+      },
+    });
+  };
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -38,7 +53,7 @@ const Navbar = () => {
           </Link>
           <Link href="/pizzas">
             <a>
-              <li className={styles.listItem}>Pizzas</li>
+              <li className={`${styles.listItem}`}>Pizzas</li>
             </a>
           </Link>
           <Link href="/orders">
@@ -46,14 +61,13 @@ const Navbar = () => {
               <li className={styles.listItem}>Orders</li>
             </a>
           </Link>
+          <Link href="/cart" className={styles.cartLink}>
+            <a>
+              <li className={`${styles.listItem} ${styles.cartLink}`}>Cart</li>
+            </a>
+          </Link>
           {user ? (
-            <li
-              className={styles.listItem}
-              onClick={() => {
-                signOut(auth);
-                destroyCookie(null, "user");
-              }}
-            >
+            <li className={styles.listItem} onClick={handleLogout}>
               Logout
             </li>
           ) : (
@@ -75,6 +89,7 @@ const Navbar = () => {
           </a>
         </Link>
       </div>
+      <Toaster />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/LoginComponent.module.css";
 import { FcGoogle } from "react-icons/fc";
 import {

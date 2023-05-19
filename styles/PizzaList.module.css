@@ -3,24 +3,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .desc {
   font-size: 1.5rem;
   color: #444;
   width: 70%;
+  text-align: center;
 }
 
 .wrapper {
   width: 100%;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-gap:1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
 }
 
-.btnDiv{
+.btnDiv {
   width: 100%;
   padding: 1.5rem 1rem;
   display: flex;
@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-.btn{
+.btn {
   width: 25%;
   padding: 1rem;
   border: none;
@@ -38,13 +38,34 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .title {
     text-align: center;
   }
-
   .desc {
     width: 90%;
     text-align: center;
+  }
+  .btn {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title {
+    text-align: center;
+  }
+  .desc {
+    width: 90%;
+    text-align: center;
+  }
+  .btn {
+    width: 45%;
   }
 }

@@ -1,0 +1,100 @@
+.container {
+  min-height: calc(100vh - 5.8rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+
+.item {
+  width:90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.item h1 {
+  padding: 0;
+  margin: 0;
+}
+.flex{
+  display: flex;
+  gap:1.5rem;
+}
+.AddButton {
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  background: teal;
+}
+.AddButton1 {
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  background: crimson;
+}
+.table {
+  width: 90%;
+  border-spacing: 1rem;
+  text-align: left;
+  margin: auto;
+}
+.table th,
+.table td {
+  text-align: center;
+  padding: 1rem;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:first-child {
+  background-color: teal;
+  margin-right: 10px;
+}
+
+.button:last-child {
+  background-color: crimson;
+}
+.Action {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .Id {
+    display: none;
+  }
+  .item {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Id {
+    display: none;
+  }
+  .Action {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .button {
+    padding: 0.5rem;
+    width: 100%;
+  }
+  .item {
+    padding: 2rem 1rem;
+  }
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+}

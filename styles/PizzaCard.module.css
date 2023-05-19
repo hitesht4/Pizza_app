@@ -6,7 +6,6 @@
   padding: 1rem 1rem;
   cursor: pointer;
   box-shadow: rgba(212, 40, 86, 0.2) 0px 8px 24px;
-  
 }
 .title {
   font-size: 1.2rem;
@@ -14,7 +13,6 @@
   color: #c7102e;
   text-align: center;
 }
-
 
 .price {
   font-size: 1.2rem;

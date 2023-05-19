@@ -35,8 +35,13 @@
   color: #ffffff;
   padding: 1rem 0;
 }
+@media screen and (max-width: 1024px) {
+  .item:first-child {
+    display: none;
+  }
+}
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .container {
     height: auto;
     text-align: center;

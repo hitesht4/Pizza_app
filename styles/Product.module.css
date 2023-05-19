@@ -33,21 +33,21 @@
   font-size: 24px;
   font-weight: 400;
   display: flex;
-  width:25%;
-  justify-content:flex-start;
+  width: 25%;
+  justify-content: flex-start;
   align-items: center;
-  gap:1rem !important;
+  gap: 1rem !important;
 }
 
 .sizes {
   width: 60%;
   display: flex;
   justify-content: space-between;
-  gap:2rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
-.size{
+.size {
   flex: 1;
   height: 100px;
   position: relative;

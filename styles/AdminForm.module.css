@@ -1,0 +1,42 @@
+.adminContainer{
+    height: calc(100vh - 5.8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Form{
+    width: 30%;
+    text-align: center;
+    padding:1rem 2rem 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+
+.adminContainer button{
+    width: 100%;
+    border: none;
+    margin-top: 1rem;
+    background: teal;
+}
+.adminContainer button:hover{
+    background: teal !important;
+}
+.Form h1{
+    margin-bottom: 2rem;
+}
+@media screen and (max-width: 1024px) {
+    .Form{
+        width: 50%;
+    }
+}
+  
+@media screen and (max-width: 480px) {
+    .Form{
+        width: 75%;
+    }
+}
+  
+
+
+
+

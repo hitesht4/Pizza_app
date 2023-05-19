@@ -33,8 +33,14 @@
   height: 100%;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
   .container {
-    height: 50vh;
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 70vh;
   }
 }
