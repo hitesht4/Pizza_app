@@ -75,7 +75,7 @@ const Cart = () => {
   };
   useEffect(() => {
     dispatch({ type: CalculateTotal, payload: total });
-  }, [cart]);
+  }, [cart,router,dispatch,total]);
 
   return (
     <div className={styles.container}>

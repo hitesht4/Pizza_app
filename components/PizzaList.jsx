@@ -118,7 +118,7 @@ const PizzaList = () => {
         })}
       </div>
       <div className={styles.btnDiv}>
-        <Link href="/pizzas">
+        <Link href="/pizzas" passHref>
           <button className={styles.btn}>Order Now</button>
         </Link>
       </div>

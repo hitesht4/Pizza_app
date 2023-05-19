@@ -83,7 +83,7 @@ const Product = ({ data }) => {
                 }}
                 style={{ border: index === size ? "2px solid red" : "none" }}
               >
-                <Image src="/img/size.png" layout="fill" />
+                <Image src="/img/size.png" layout="fill" alt=""/>
                 <span className={styles.number}>{item.tag}</span>
               </div>
             );

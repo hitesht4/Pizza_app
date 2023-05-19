@@ -1,6 +1,7 @@
 import axios from "axios";
 import styles from "../../styles/Order.module.css";
 import { parseCookies } from "nookies";
+import Image from "next/image";
 
 const Order = ({ orders }) => {
   return (
@@ -23,7 +24,7 @@ const Order = ({ orders }) => {
                   {o.items.map((i, index) => (
                     <div key={index} className={styles.orderItem}>
                       <div>
-                        <img src={i.img} />
+                        <Image src={i.img} alt=""/>
                       </div>
                       <div>{i.title}</div>
                       <div>{i.price}$</div>
