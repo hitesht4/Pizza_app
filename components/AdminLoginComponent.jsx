@@ -19,7 +19,7 @@ const AdminLoginComponent = () => {
       try {
         let {
           data: { status },
-        } = await axios.post("https://pizza-hitesht4.vercel.app/api/login", {
+        } = await axios.post("/api/login", {
           username,
           password,
         });

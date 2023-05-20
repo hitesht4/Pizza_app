@@ -27,14 +27,14 @@ function AddModal(props) {
   };
 
   const handleCreate = async () => {
-    if (!file || !title || !desc || prices.length <= 0) {
-      return toast("Please Add Information Correctly", {
-        style: {
-          background: "red",
-          color: "white",
-        },
-      });
-    }
+    // if (!file || !title || !desc || prices.length <= 0) {
+    //   return toast("Please Add Information Correctly", {
+    //     style: {
+    //       background: "red",
+    //       color: "white",
+    //     },
+    //   });
+    // }
     const data = new FormData();
     data.append("file", file);
     data.append("upload_preset", "uploads");
@@ -45,25 +45,27 @@ function AddModal(props) {
       );
 
       const { url } = uploadRes.data;
-      const newProduct = {
-        title,
-        desc,
-        prices,
-        extraOptions,
-        img: url,
-      };
-      let { data } = await axios.post(
-        "api/products",
-        newProduct
-      );
-      props.onHide();
-      props.setPizzaList([...props.pizzaList, { ...data.pizza }]);
-      return toast("Item was added successfully", {
-        style: {
-          background: "green",
-          color: "white",
-        },
-      });
+
+      console.log(url);
+      // const newProduct = {
+      //   title,
+      //   desc,
+      //   prices,
+      //   extraOptions,
+      //   img: url,
+      // };
+      // let { data } = await axios.post(
+      //   "api/products",
+      //   newProduct
+      // );
+      // props.onHide();
+      // props.setPizzaList([...props.pizzaList, { ...data.pizza }]);
+      // return toast("Item was added successfully", {
+      //   style: {
+      //     background: "green",
+      //     color: "white",
+      //   },
+      // });
     } catch (err) {
       return toast(err.message, {
         style: {
