@@ -46,6 +46,11 @@
     height: auto;
     text-align: center;
   }
+  .motto {
+    color: #ffffff;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
   .item:first-child {
     display: none;
   }
@@ -55,10 +60,11 @@
   }
 
   .title {
-    font-size: 1.9rem;
+    font-size: 1rem;
   }
 
   .text {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
+    padding: 0.5rem;
   }
 }

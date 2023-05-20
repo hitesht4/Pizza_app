@@ -35,7 +35,7 @@
   justify-content: center;
   gap: 0.5rem;
 }
-.table td {
+.table td, .table th {
   text-align: center;
 }
 .name {
@@ -69,6 +69,7 @@
   justify-content: space-between;
   width: 100%;
 }
+
 
 .title {
   text-align: center;
@@ -107,6 +108,10 @@
   }
   .wrapper {
     width: 100%;
+    font-size: 0.6rem;
+  }
+  .totalTextTitle {
+    font-size:0.6rem;
   }
   .name {
     font-size: 0.5rem;
@@ -117,17 +122,18 @@
   }
   .table th {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-align: center;
   }
   .table td {
     text-align: center;
     padding: 0;
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
   .imgContainer {
     width: 30px;
     height: 30px;
+    margin: auto;
   }
   .extraCol {
     display: none;

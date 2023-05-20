@@ -71,7 +71,6 @@ const Signup = () => {
           }}
           required
         />
-
         <Button size="lg" type="submit" className={styles.signin}>
           Sign Up
         </Button>

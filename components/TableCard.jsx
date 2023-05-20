@@ -10,7 +10,7 @@ const TableCard = ({ product, setPizzaList, pizzaList }) => {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        "https://pizza-hitesht4.vercel.app/api/products/" + id
+        "api/products/" + id
       );
       toast(data.message, {
         style: {
