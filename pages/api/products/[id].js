@@ -17,8 +17,8 @@ export default async function handler(req, res) {
   } else if (method === "PUT") {
     try {
       const body=req.body;
-      console.log(body);
-      let p=await PizzaModel.updateOne(query._id,{$set:{...body}});
+      let {prices,extraOptions}=await PizzaModel.findOne({_id:query.id});
+      let p=await PizzaModel.updateOne(query._id,{$set:{...body,prices:[...prices],extraOptions:[...extraOptions]}});
       console.log(p);
       res.status(200).json({ message: "Item was Updated Successfully",pizza:p});
     } catch (e) {

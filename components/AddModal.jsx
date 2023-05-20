@@ -26,15 +26,7 @@ function AddModal(props) {
     setExtraOptions((prev) => [...prev, extra]);
   };
 
-  const handleCreate = async () => {
-    // if (!file || !title || !desc || prices.length <= 0) {
-    //   return toast("Please Add Information Correctly", {
-    //     style: {
-    //       background: "red",
-    //       color: "white",
-    //     },
-    //   });
-    // }
+  const handleFile = async () => {
     const data = new FormData();
     data.append("file", file);
     data.append("upload_preset", "uploads");
@@ -43,29 +35,8 @@ function AddModal(props) {
         "https://api.cloudinary.com/v1_1/dyclq4y36/image/upload",
         data
       );
-
       const { url } = uploadRes.data;
-
-      console.log(url);
-      // const newProduct = {
-      //   title,
-      //   desc,
-      //   prices,
-      //   extraOptions,
-      //   img: url,
-      // };
-      // let { data } = await axios.post(
-      //   "api/products",
-      //   newProduct
-      // );
-      // props.onHide();
-      // props.setPizzaList([...props.pizzaList, { ...data.pizza }]);
-      // return toast("Item was added successfully", {
-      //   style: {
-      //     background: "green",
-      //     color: "white",
-      //   },
-      // });
+      return url;
     } catch (err) {
       return toast(err.message, {
         style: {
@@ -75,6 +46,38 @@ function AddModal(props) {
       });
     }
   };
+
+  const handleCreate = async () => {
+    if (!file || !title || !desc || prices.length <= 0) {
+      return toast("Please Add Information Correctly", {
+        style: {
+          background: "red",
+          color: "white",
+        },
+      });
+    }
+    const url = await handleFile();
+    const newProduct = {
+      title,
+      desc,
+      prices,
+      extraOptions,
+      img: url,
+    };
+      let { data } = await axios.post(
+        "api/products",
+         newProduct
+      );
+      props.onHide();
+      props.setPizzaList([...props.pizzaList, { ...data.pizza }]);
+      return toast("Item was added successfully", {
+        style: {
+          background: "green",
+          color: "white",
+        },
+      });
+  };
+
   return (
     <Modal
       {...props}
