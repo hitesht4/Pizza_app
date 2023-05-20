@@ -8,8 +8,6 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { useRouter } from "next/router";
 import { setCookie } from "nookies";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -17,8 +15,7 @@ const provider = new GoogleAuthProvider();
 const Signup = () => {
   const [email, setEmaillog] = useState(null);
   const [password, setPasswordlog] = useState(null);
-  const [user] = useAuthState(auth);
-  const router = useRouter();
+
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -52,10 +49,6 @@ const Signup = () => {
     });
   };
 
-  if (user) {
-    router.push("/");
-    return <div>...Loading</div>;
-  }
   return (
     <>
       <Form onSubmit={handleSignup} className={styles.Form}>
@@ -67,6 +60,7 @@ const Signup = () => {
           onChange={(e) => {
             setEmaillog(e.target.value);
           }}
+          required
         />
         <Form.Control
           className="mb-2 pt-2 pb-2"
@@ -75,6 +69,7 @@ const Signup = () => {
           onChange={(e) => {
             setPasswordlog(e.target.value);
           }}
+          required
         />
 
         <Button size="lg" type="submit" className={styles.signin}>
