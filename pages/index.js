@@ -18,7 +18,7 @@ export default function Home({data}) {
 }
 
 export const getServerSideProps=async()=>{
-  let {data}=await axios.get("http://localhost:3000/api/products/featured");
+  let {data}=await axios.get("https://pizza-hitesht4.vercel.app/api/products/featured");
   return {
     props:{
       data
