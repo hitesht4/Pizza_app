@@ -34,7 +34,7 @@ const Product = ({ data }) => {
       setPrice(Number(price) - Number(p));
       setExtras(extras.filter((extra) => extra !== t));
     }
-    console.log(extras);
+    
   };
 
   const handleAddCart = () => {
@@ -143,7 +143,7 @@ const Product = ({ data }) => {
 
 export const getServerSideProps = async (context) => {
   const id = context.query.id;
-  let { data } = await axios.get(`https://pizza-hitesht4.vercel.app/api/products/${id}`);
+  let { data } = await axios.get(`http://localhost:3000/api/products/${id}`);
   return {
     props: { data },
   };

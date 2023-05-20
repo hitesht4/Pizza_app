@@ -1,8 +1,17 @@
 import dbConnect from "../../../utils/mongo";
 import orderModel from "../../../models/Order";
+// import Cors from 'cors';
+// import initMiddleware from '../../../utils/middelware';
+
+// const cors = initMiddleware(
+//   Cors({
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   })
+// );
 
 export default async function handler(req, res) {
   await dbConnect();
+  // await cors(req,res);
   const { method } = req;
 
   if (method === "GET") {

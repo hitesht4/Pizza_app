@@ -46,36 +46,38 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <Link href="/">
-            <a>
-              <li className={styles.listItem}>Home</li>
-            </a>
-          </Link>
-          <Link href="/pizzas">
-            <a>
-              <li className={`${styles.listItem}`}>Pizzas</li>
-            </a>
-          </Link>
-          <Link href="/orders">
-            <a>
-              <li className={styles.listItem}>Orders</li>
-            </a>
-          </Link>
-          <Link href="/cart" className={styles.cartLink}>
-            <a>
-              <li className={`${styles.listItem} ${styles.cartLink}`}>Cart</li>
-            </a>
-          </Link>
+          <li className={styles.listItem}>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li className={`${styles.listItem}`}>
+            {" "}
+            <Link href="/pizzas">
+              <a>Pizzas</a>
+            </Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/orders">
+              <a>Orders</a>
+            </Link>
+          </li>
+          <li className={`${styles.listItem} ${styles.cartLink}`}>
+            <Link href="/cart" className={styles.cartLink}>
+              <a>Cart</a>
+            </Link>
+          </li>
+
           {user ? (
             <li className={styles.listItem} onClick={handleLogout}>
               Logout
             </li>
           ) : (
-            <Link href="/login">
-              <a>
-                <li className={styles.listItem}>Login</li>
-              </a>
-            </Link>
+            <li className={styles.listItem}>
+              <Link href="/login">
+                <a>Login</a>
+              </Link>
+            </li>
           )}
         </ul>
       </div>

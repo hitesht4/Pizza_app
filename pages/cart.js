@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase";
 import toast, { Toaster } from "react-hot-toast";
+import {parseCookies} from 'nookies';
 
 const Cart = () => {
   const { cart, total } = useSelector((state) => state.cart);
@@ -20,10 +21,11 @@ const Cart = () => {
     dispatch({ type: Delete, payload: id });
   };
 
+
   const createCheckoutSession = async () => {
     try {
       let res = await axios.post(
-        "https://pizza-hitesht4.vercel.app/api/checkout_sessions",
+        "api/checkout_sessions",
         { cart }
       );
       window.location = res.data.sessionUrl;
@@ -33,6 +35,8 @@ const Cart = () => {
   };
 
   const createOrder = async () => {
+    const cookies = parseCookies();
+    const userCookie = cookies.user;
     if (!user) {
       toast("Login In First", {
         style: {
@@ -60,13 +64,13 @@ const Cart = () => {
       price: item.price,
     }));
     let order = {
-      customer: localStorage.getItem("user"),
+      customer: userCookie,
       total: total,
       paymentMethod: "Card",
       items: [...orderItems],
     };
     try {
-      await axios.post("https://pizza-hitesht4.vercel.app/api/orders", order);
+      await axios.post("api/orders", order);
       await createCheckoutSession();
       dispatch({ type: Reset });
     } catch (e) {
